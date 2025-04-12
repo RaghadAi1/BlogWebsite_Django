@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends "master.html" %}
+{% block title %}
+Details about {{ users.ID }} {{ users.Username }}{% endblock %}
+{% block content %}
+
+    <nav>
+        <ul>
+            <li><a href="/Blogs.html">Blogs</a></li>
+            <li><a href="/categories.html">categories</a></li>
+            <li><a href="/blog_details.html">blog_details</a></li>
+            <li><a href="/users.html">users</a></li>
+            <li><a href="/comments.html">comments</a></li>
+    
+        </ul>
+    </nav>
+        <!-- Page-specific content goes here -->
+         <!-- call the clss user. -->
+        <h1>{{ users.ID }} {{ users.Username }}</h1>
+        <p>Email: {{ users.Email }}</p>
+        <p>user since: {{ users.joined_date }}</p>
+        <p>Back to <a href="/users">Users</a></p>
+        
+
+
+{% endblock %}
+</body>
+</html>

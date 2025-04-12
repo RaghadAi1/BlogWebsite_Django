@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/Blogs.html">About Us</a></li>
+            <li><a href="/categories.html">Services</a></li>
+            <li><a href="/blog_details.html">Contact</a></li>
+            <li><a href="/users.html">Blog</a></li>
+            <li><a href="/comments.html">Blog</a></li>
+        </ul>
+    </nav>
+    {% extends "master.html" %}
+    {% block title %}
+   
+    {% endblock %}
+    {% block content %}
+        <!-- Page-specific content goes here -->
+        <!-- users.html: Displays a list of all users, from models -->
+        <!-- Django is case-sensitive for model fields careful -->
+        <ul>
+            {% for x in users %}
+            <!-- call the class blog details so to list more details of the blog -->
+            <li><a href="blog_details/{{ x.id }}">{{x.ID}}{{x.Username}}{{x.Email}}</a></li>
+            {% endfor %}
+        </ul>
+{% endblock %}
+<!-- Go to views after you finish the class -->
+</body>
+</html>
+<!-- python3 manage.py createsuperuser -->
+<!-- python3 manage.py runserver  -->
+<!-- http://127.0.0.1:8000/admin/ -->

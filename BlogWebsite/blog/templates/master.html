@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Blog Website{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <!-- Navigation -->
+    </header>
+{% block content %}
+        <!-- Page-specific content goes here -->
+        <nav>
+            <ul>
+                <li><a href="/Blogs.html">Blogs</a></li>
+                <li><a href="/categories.html">categories</a></li>
+                <li><a href="/blog_details.html">blog_details</a></li>
+                <li><a href="/users.html">users</a></li>
+                <li><a href="/comments.html">comments</a></li>
+        
+        
+            </ul>
+        </nav>
+{% endblock %}
+<footer>
+    <p>The Blog</p>
+</footer>
+
+</body>
+</html>

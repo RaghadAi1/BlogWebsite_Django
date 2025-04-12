@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "master.html" %}
+    {% block title %}
+     My Tennis Club
+    {% endblock %}
+    {% block content %}
+<nav>
+    <ul>
+        <li><a href="/Blogs.html">Blogs</a></li>
+        <li><a href="/categories.html">categories</a></li>
+        <li><a href="/blog_details.html">blog_details</a></li>
+        <li><a href="/users.html">users</a></li>
+        <li><a href="/comments.html">comments</a></li>
+
+
+    </ul>
+</nav>
+<ul>
+    {% for x in users %}
+    <!-- call the class blog details so to list more details of the blog -->
+    <li><a href="blog_details/{{ x.id }}">{{x.ID}}{{x.Username}}{{x.Email}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+</body>
+</html>

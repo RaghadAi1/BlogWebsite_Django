@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "master.html" %}
+    {% block title %}
+    <nav>
+        <ul>
+            <li><a href="/Blogs.html">About Us</a></li>
+            <li><a href="/categories.html">Services</a></li>
+            <li><a href="/blog_details.html">Contact</a></li>
+            <li><a href="/users.html">Blog</a></li>
+            <li><a href="/comments.html">Blog</a></li>
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block content %}
+        <!-- Page-specific content goes here -->
+        <h1>Comment List</h1>
+        <ul>
+            {% for x in comments %}
+                <li>
+                {{ x.post_id.id }}{{ x.user_id.id }}{{ x.Content }}{{ x.Date_Posted }}
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
+
+</body>
+</html>
